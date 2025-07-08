@@ -1,0 +1,21 @@
+<html>
+<head>
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+
+<body>
+    <div class="App">
+        <header class="App-header">
+            <img src="{{ url_for('static', filename='sanofi-logo-visual.png') }}" class="App-logo" alt="logo" />
+            <p>
+                MongoDB <span class="heart">♥️</span> Flask
+            </p>
+            <ul>
+                {% for item in ret %}
+                    <li style="color:white;">{{ item }}</li>
+                {% endfor %}
+            </ul>
+        </header>
+    </div>
+</body>
+</html>
