@@ -13,4 +13,4 @@ def hello_mongo():
     return render_template("mongo.html", title="Mongo Test", ret=ret)
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
