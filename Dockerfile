@@ -11,10 +11,9 @@ COPY static/ /sd-flask/static/
 COPY app.py  /sd-flask/
 
 # Upgrade pip and install Python dependencies
-RUN pip3 install -i https://pypi.org/simple --trusted-host pypi.org/simple python-pypi-mirror
-RUN pip3 install flask
-RUN pip3 install pymongo
-RUN pip3 install gunicorn
+RUN pip3 install flask --trusted-host=pypi.python.org --trusted-host=pypi.org --trusted-host=files.pythonhosted.org
+RUN pip3 install pymongo --trusted-host=pypi.python.org --trusted-host=pypi.org --trusted-host=files.pythonhosted.org
+RUN pip3 install gunicorn --trusted-host=pypi.python.org --trusted-host=pypi.org --trusted-host=files.pythonhosted.org
 
 # Expose port 5000 for the Flask application
 EXPOSE 5000
