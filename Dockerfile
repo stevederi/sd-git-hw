@@ -11,6 +11,7 @@ COPY static/ /sd-flask/static/
 COPY app.py  /sd-flask/
 
 # Upgrade pip and install Python dependencies
+RUN pip3 install -i https://pypi.org/simple --trusted-host pypi.org/simple python-pypi-mirror
 RUN pip3 install flask
 RUN pip3 install pymongo
 RUN pip3 install gunicorn
